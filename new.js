@@ -18,10 +18,10 @@ let updateTimer;
 const music_list = [];
 let prev_list = [];
 
-for(let l=0; l< 5; l++){
-    music_list.push({music : `./src/BTS${l+1}.mp3`});
+for(let l=0; l< 20; l++){
+    music_list.push({music : `./src/BTS${Number(l+1)}.mp3`});
 }
-
+console.log(music_list);
 loadTrack(getRandom());
 
 function loadTrack(track_index){
