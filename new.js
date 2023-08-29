@@ -37,13 +37,14 @@ function loadTrack(track_index){
         curr_track.addEventListener('ended', nextTrack);
         random_bg_color();
     }else{
-        if(prev_list.length <= music_list.length){
-            prev_list = [];
-            track_index = getRandom();
-            curr_track.addEventListener('ended',loadTrack(track_index));
-        }else{
-            console.log('Playlist End');
+        if(prev_list.length < music_list.length){
             nextTrack();
+        }else{
+            console.log('End')
+            track_index = getRandom();
+            prev_list = [];
+            prev_list.push(track_index);
+            loadTrack(track_index);
         }
     }
 }
